@@ -34,8 +34,6 @@ services:
             -   php
 
 volumes:
-    symfony_app_var:
-    symfony_app_vendor:
     db_app:
 
 networks:
