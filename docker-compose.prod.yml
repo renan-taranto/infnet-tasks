@@ -19,6 +19,12 @@ services:
                 condition: on-failure
         ports:
             - 80:80
+        healthcheck:
+            test: [ "CMD", "curl", "-f", "http://localhost/ping" ]
+            interval: 10s
+            timeout: 3s
+            retries: 3
+            start_period: 5s
 
     db:
         deploy:
