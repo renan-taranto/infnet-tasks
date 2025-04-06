@@ -32,3 +32,47 @@ services:
             placement:
                 constraints:
                     - node.role == manager
+
+    cadvisor:
+        image: gcr.io/cadvisor/cadvisor:v0.47.2
+        deploy:
+            mode: global
+        volumes:
+            - /:/rootfs:ro
+            - /var/run:/var/run:ro
+            - /sys:/sys:ro
+            - /var/lib/docker/:/var/lib/docker:ro
+        ports:
+            - target: 8080
+              published: 8080
+              mode: host
+        networks:
+            - monitor-net
+
+    prometheus:
+        image: prom/prometheus:v2.52.0
+        volumes:
+            - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+        ports:
+            - target: 9090
+              published: 9090
+              mode: host
+        networks:
+            - monitor-net
+
+    grafana:
+        image: grafana/grafana-oss:10.3.1
+        ports:
+            - target: 3000
+              published: 3000
+              mode: host
+        networks:
+            - monitor-net
+        volumes:
+            - grafana-storage:/var/lib/grafana
+
+networks:
+    monitor-net:
+
+volumes:
+    grafana-storage:
