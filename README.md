@@ -14,6 +14,16 @@ que realiza o build das imagens, publica no Docker Hub e executa o deploy autom�
 
 ---
 
+## 🔗 Links Importantes
+
+📦 Repositório no GitHub:
+https://github.com/renan-taranto/infnet-tasks
+
+🐳 Repositório no Docker Hub:
+https://hub.docker.com/repositories/renantaranto
+
+---
+
 ## 🧩 Arquitetura dos Serviços
 
 A aplicação é composta pelos seguintes serviços:
@@ -107,15 +117,15 @@ A aplicação é composta pelos seguintes serviços:
 ## 🔁 Pipeline no Github Actions
 
 Para fazer o deploy da aplicação, uma pipeline foi criada no Github Actions. Ela faz
-o build das imagens, envia elas para o Docker hub (push), acessa o EC2 e executa o deploy. O código
+o build das imagens, envia elas para o Docker Hub (push), acessa o EC2 e executa o deploy. O código
 relacionado pode ser visto [aqui](https://github.com/renan-taranto/infnet-tasks/blob/master/.github/workflows/cd.yml).
 ![Pipeline](docs/images/Pipeline.png)
 
 ---
 
-## 📦 Imagens hospedadas no Dockerhub
+## 📦 Imagens hospedadas no Docker Hub
 
-O Docker hub é usado para hospedar as imagens
+O Docker Hub é usado para hospedar as imagens
 
 ![Imagend Docker](docs/images/Docker%20HUB%20-%20Imagens.png)
 
