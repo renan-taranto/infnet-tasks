@@ -39,3 +39,4 @@ volumes:
 
 networks:
     symfony_app:
+        driver: overlay
