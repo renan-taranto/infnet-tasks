@@ -70,6 +70,11 @@ services:
             - monitor-net
         volumes:
             - grafana-storage:/var/lib/grafana
+        deploy:
+            replicas: 1
+            placement:
+                constraints:
+                    - node.role == worker
 
 networks:
     monitor-net:
