@@ -78,6 +78,7 @@ services:
 
 networks:
     monitor-net:
+        driver: overlay
 
 volumes:
     grafana-storage:
