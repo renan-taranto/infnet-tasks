@@ -59,6 +59,11 @@ services:
               mode: host
         networks:
             - monitor-net
+        deploy:
+            replicas: 1
+            placement:
+                constraints:
+                    - node.role == manager
 
     grafana:
         image: grafana/grafana-oss:10.3.1
